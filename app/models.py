@@ -8,9 +8,9 @@ class Imagen(Base):
     descripcion = Column(Text, nullable=False)
     ruta = Column(String(255), nullable=False)
     fecha_creacion = Column(DATETIME, NOT NULL, DEFAULT CURRENT_TIMESTAMP)
-    usuario_id = Column(Integer, NOT NULL)
+    usuario_id = Column(Integer, not null)
 
-class Usuario(Base):
+class Usuario(BaseException):
     __tablename__ = "usuarios"
 
     id_usuario = Column(Integer, primary_key=True, autoincrement=True)
