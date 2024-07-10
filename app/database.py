@@ -2,6 +2,7 @@ import os
 import mysql.connector
 from flask import g
 from dotenv import load_dotenv
+from database import db
 
 # Cargar variables de entorno desde el archivo .env
 load_dotenv()
@@ -16,3 +17,11 @@ DATABASE_CONFIG = {
 }
 
 
+from flask_sqlalchemy import SQLAlchemy
+
+db = SQLAlchemy()
+
+def get_db():
+    # Código para obtener la conexión a la base de datos
+    # ...
+    return db
